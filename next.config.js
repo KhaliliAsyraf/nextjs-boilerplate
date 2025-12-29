@@ -5,7 +5,7 @@ const nextConfig = {
         return [
             {
                 source: '/api/:path*',
-                destination: 'http://app:3000/api/:path*', // Docker networking
+                destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`, // Docker networking
             },
         ];
     },

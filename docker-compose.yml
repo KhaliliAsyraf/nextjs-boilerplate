@@ -14,4 +14,7 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3030
-      - WATCHPACK_POLLING=true
+      - WATCHPACK_POLLING=1000
+      - CHOKIDAR_USEPOLLING=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # For Docker networking between containers
