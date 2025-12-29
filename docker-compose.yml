@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: nextjs-frontend
+    ports:
+      - "3030:3030"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    restart: always
+    environment:
+      - NODE_ENV=development
+      - PORT=3030
+      - WATCHPACK_POLLING=true
